@@ -1,0 +1,78 @@
+{
+  "common": {
+    "name": "tailscale-manager",
+    "version": "0.0.1",
+    "news": {
+      "0.0.1": {
+        "en": "Initial test version with installation, connection control, timed activation and status monitoring.",
+        "de": "Erste Testversion mit Installation, Verbindungssteuerung, zeitlicher Aktivierung und Statusüberwachung."
+      }
+    },
+    "titleLang": { "en": "Tailscale Manager", "de": "Tailscale Manager" },
+    "desc": {
+      "en": "Install, monitor and control the local Tailscale client",
+      "de": "Lokalen Tailscale-Client installieren, überwachen und steuern"
+    },
+    "authors": ["TheBam <elektrobam@gmx.de>"],
+    "keywords": ["tailscale", "vpn", "network", "remote access"],
+    "licenseInformation": { "type": "free", "license": "MIT" },
+    "platform": "Javascript/Node.js",
+    "main": "main.js",
+    "icon": "tailscale-manager.svg",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/TheBam1990/ioBroker.tailscale-manager/main/admin/tailscale-manager.svg",
+    "readme": "https://github.com/TheBam1990/ioBroker.tailscale-manager/blob/main/README.md",
+    "loglevel": "info",
+    "mode": "daemon",
+    "type": "network",
+    "tier": 3,
+    "compact": true,
+    "connectionType": "local",
+    "dataSource": "poll",
+    "adminUI": { "config": "json" },
+    "dependencies": [{ "js-controller": ">=6.0.11" }],
+    "globalDependencies": [{ "admin": ">=7.6.20" }]
+  },
+  "encryptedNative": ["authKey"],
+  "protectedNative": ["authKey"],
+  "native": {
+    "authKey": "",
+    "hostname": "",
+    "acceptRoutes": false,
+    "acceptDns": true,
+    "advertiseRoutes": "",
+    "exitNode": "",
+    "pollInterval": 15,
+    "defaultDurationMinutes": 60,
+    "autoInstall": false
+  },
+  "objects": [],
+  "instanceObjects": [
+    { "_id": "info", "type": "channel", "common": { "name": "Information" }, "native": {} },
+    { "_id": "info.connection", "type": "state", "common": { "name": "Tailscale connected", "type": "boolean", "role": "indicator.connected", "read": true, "write": false, "def": false }, "native": {} },
+    { "_id": "info.installed", "type": "state", "common": { "name": "Tailscale installed", "type": "boolean", "role": "indicator", "read": true, "write": false, "def": false }, "native": {} },
+    { "_id": "info.serviceRunning", "type": "state", "common": { "name": "Tailscale service running", "type": "boolean", "role": "indicator", "read": true, "write": false, "def": false }, "native": {} },
+    { "_id": "info.tunAvailable", "type": "state", "common": { "name": "TUN network device available", "type": "boolean", "role": "indicator", "read": true, "write": false, "def": false }, "native": {} },
+    { "_id": "info.setupHint", "type": "state", "common": { "name": "Platform setup hint", "type": "string", "role": "text", "read": true, "write": false, "def": "" }, "native": {} },
+    { "_id": "info.loginUrl", "type": "state", "common": { "name": "Interactive Tailscale login URL", "type": "string", "role": "text.url", "read": true, "write": false, "def": "" }, "native": {} },
+    { "_id": "info.backendState", "type": "state", "common": { "name": "Backend state", "type": "string", "role": "text", "read": true, "write": false, "def": "Unknown" }, "native": {} },
+    { "_id": "info.version", "type": "state", "common": { "name": "Tailscale version", "type": "string", "role": "info.version", "read": true, "write": false, "def": "" }, "native": {} },
+    { "_id": "info.tailscaleIPs", "type": "state", "common": { "name": "Tailscale IP addresses", "type": "string", "role": "info.ip", "read": true, "write": false, "def": "" }, "native": {} },
+    { "_id": "info.dnsName", "type": "state", "common": { "name": "MagicDNS name", "type": "string", "role": "text", "read": true, "write": false, "def": "" }, "native": {} },
+    { "_id": "info.tailnet", "type": "state", "common": { "name": "Tailnet", "type": "string", "role": "text", "read": true, "write": false, "def": "" }, "native": {} },
+    { "_id": "info.peersOnline", "type": "state", "common": { "name": "Online peers", "type": "number", "role": "value", "read": true, "write": false, "def": 0 }, "native": {} },
+    { "_id": "info.enabledUntil", "type": "state", "common": { "name": "Temporarily enabled until", "type": "number", "role": "value.time", "read": true, "write": false, "def": 0 }, "native": {} },
+    { "_id": "info.remainingSeconds", "type": "state", "common": { "name": "Temporary connection time remaining", "type": "number", "role": "value.interval", "unit": "s", "min": 0, "read": true, "write": false, "def": 0 }, "native": {} },
+    { "_id": "info.remainingTime", "type": "state", "common": { "name": "Temporary connection time remaining (formatted)", "type": "string", "role": "text", "read": true, "write": false, "def": "00:00:00" }, "native": {} },
+    { "_id": "info.lastUpdate", "type": "state", "common": { "name": "Last status update", "type": "number", "role": "value.time", "read": true, "write": false, "def": 0 }, "native": {} },
+    { "_id": "info.lastError", "type": "state", "common": { "name": "Last error", "type": "string", "role": "text", "read": true, "write": false, "def": "" }, "native": {} },
+    { "_id": "control", "type": "channel", "common": { "name": "Control" }, "native": {} },
+    { "_id": "control.connected", "type": "state", "common": { "name": "Connect or disconnect Tailscale", "type": "boolean", "role": "switch", "read": true, "write": true, "def": false }, "native": {} },
+    { "_id": "control.durationMinutes", "type": "state", "common": { "name": "Temporary connection duration", "type": "number", "role": "level.timer", "unit": "min", "min": 1, "max": 10080, "read": true, "write": true, "def": 60 }, "native": {} },
+    { "_id": "control.enableTimed", "type": "state", "common": { "name": "Enable timed connection", "type": "boolean", "role": "button", "read": false, "write": true, "def": false }, "native": {} },
+    { "_id": "control.install", "type": "state", "common": { "name": "Install Tailscale", "type": "boolean", "role": "button", "read": false, "write": true, "def": false }, "native": {} },
+    { "_id": "control.loginInteractive", "type": "state", "common": { "name": "Start interactive login", "type": "boolean", "role": "button", "read": false, "write": true, "def": false }, "native": {} },
+    { "_id": "control.logout", "type": "state", "common": { "name": "Log this device out of Tailscale", "type": "boolean", "role": "button", "read": false, "write": true, "def": false }, "native": {} },
+    { "_id": "control.refresh", "type": "state", "common": { "name": "Refresh status", "type": "boolean", "role": "button", "read": false, "write": true, "def": false }, "native": {} }
+  ]
+}

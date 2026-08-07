@@ -1,0 +1,32 @@
+{
+  "name": "iobroker.tailscale-manager",
+  "version": "0.0.1",
+  "description": "Install, monitor and control the local Tailscale client from ioBroker",
+  "author": { "name": "TheBam", "email": "elektrobam@gmx.de" },
+  "homepage": "https://github.com/TheBam1990/ioBroker.tailscale-manager",
+  "license": "MIT",
+  "keywords": ["ioBroker", "Tailscale", "VPN", "network", "remote access"],
+  "repository": { "type": "git", "url": "git+https://github.com/TheBam1990/ioBroker.tailscale-manager.git" },
+  "bugs": { "url": "https://github.com/TheBam1990/ioBroker.tailscale-manager/issues" },
+  "main": "main.js",
+  "engines": { "node": ">=20" },
+  "dependencies": { "@iobroker/adapter-core": "^3.4.3" },
+  "devDependencies": {
+    "@iobroker/adapter-dev": "^1.5.0",
+    "@iobroker/eslint-config": "^2.3.4",
+    "@iobroker/testing": "^5.3.0",
+    "@tsconfig/node22": "^22.0.5",
+    "@types/node": "^22.20.0",
+    "eslint": "^9.39.0",
+    "mocha": "^11.7.0",
+    "typescript": "^5.9.3"
+  },
+  "scripts": {
+    "test": "npm run check && npm run test:package && npm run test:unit",
+    "check": "tsc --noEmit",
+    "lint": "eslint .",
+    "test:package": "mocha test/package.test.js --exit",
+    "test:unit": "mocha test/unit.test.js --exit"
+  },
+  "files": ["admin", "lib", "io-package.json", "main.js", "README.md", "READMEde.md", "LICENSE"]
+}
