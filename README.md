@@ -139,3 +139,5 @@ container. The adapter reports the condition through `info.tunAvailable` and
 ## License
 
 MIT License
+
+Copyright (c) 2026 TheBam

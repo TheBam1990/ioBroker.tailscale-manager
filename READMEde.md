@@ -144,3 +144,5 @@ Container laufenden Adapter vergeben werden. Der Adapter meldet den Zustand in
 ## Lizenz
 
 MIT-Lizenz
+
+Copyright (c) 2026 TheBam

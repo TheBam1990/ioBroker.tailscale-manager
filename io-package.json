@@ -5,19 +5,20 @@
     "news": {
       "0.0.1": {
         "en": "Initial test version with installation, connection control, timed activation and status monitoring.",
-        "de": "Erste Testversion mit Installation, Verbindungssteuerung, zeitlicher Aktivierung und Statusüberwachung."
+        "de": "Erste Testversion mit Installation, Verbindungssteuerung, zeitlicher Aktivierung und Statusüberwachung.",
+        "ru": "Initial test version with installation, connection control, timed activation and status monitoring.", "pt": "Versão inicial de teste com instalação, controlo de ligação, ativação temporizada e monitorização de estado.", "nl": "Eerste testversie met installatie, verbindingsregeling, tijdgestuurde activering en statusbewaking.", "fr": "Version de test initiale avec installation, contrôle de connexion, activation temporisée et surveillance d'état.", "it": "Versione di test iniziale con installazione, controllo connessione, attivazione temporizzata e monitoraggio stato.", "es": "Versión de prueba inicial con instalación, control de conexión, activación temporizada y supervisión del estado.", "pl": "Pierwsza wersja testowa z instalacją, sterowaniem połączeniem, aktywacją czasową i monitorowaniem stanu.", "uk": "Початкова тестова версія з установленням, керуванням з'єднанням, активацією за часом і моніторингом стану.", "zh-cn": "初始测试版本，包含安装、连接控制、定时启用和状态监控。"
       }
     },
-    "titleLang": { "en": "Tailscale Manager", "de": "Tailscale Manager" },
+    "titleLang": { "en": "Tailscale Manager", "de": "Tailscale Manager", "ru": "Tailscale Manager", "pt": "Tailscale Manager", "nl": "Tailscale Manager", "fr": "Tailscale Manager", "it": "Tailscale Manager", "es": "Tailscale Manager", "pl": "Tailscale Manager", "uk": "Tailscale Manager", "zh-cn": "Tailscale Manager" },
     "desc": {
       "en": "Install, monitor and control the local Tailscale client",
-      "de": "Lokalen Tailscale-Client installieren, überwachen und steuern"
+      "de": "Lokalen Tailscale-Client installieren, überwachen und steuern",
+      "ru": "Install, monitor and control the local Tailscale client", "pt": "Instalar, monitorizar e controlar o cliente Tailscale local", "nl": "De lokale Tailscale-client installeren, bewaken en bedienen", "fr": "Installer, surveiller et contrôler le client Tailscale local", "it": "Installa, monitora e controlla il client Tailscale locale", "es": "Instala, supervisa y controla el cliente Tailscale local", "pl": "Instaluj, monitoruj i steruj lokalnym klientem Tailscale", "uk": "Встановлення, моніторинг і керування локальним клієнтом Tailscale", "zh-cn": "安装、监控和控制本地 Tailscale 客户端"
     },
     "authors": ["TheBam <elektrobam@gmx.de>"],
     "keywords": ["tailscale", "vpn", "network", "remote access"],
     "licenseInformation": { "type": "free", "license": "MIT" },
     "platform": "Javascript/Node.js",
-    "main": "main.js",
     "icon": "tailscale-manager.svg",
     "enabled": true,
     "extIcon": "https://raw.githubusercontent.com/TheBam1990/ioBroker.tailscale-manager/main/admin/tailscale-manager.svg",
@@ -56,7 +57,7 @@
     { "_id": "info.setupHint", "type": "state", "common": { "name": "Platform setup hint", "type": "string", "role": "text", "read": true, "write": false, "def": "" }, "native": {} },
     { "_id": "info.loginUrl", "type": "state", "common": { "name": "Interactive Tailscale login URL", "type": "string", "role": "text.url", "read": true, "write": false, "def": "" }, "native": {} },
     { "_id": "info.backendState", "type": "state", "common": { "name": "Backend state", "type": "string", "role": "text", "read": true, "write": false, "def": "Unknown" }, "native": {} },
-    { "_id": "info.version", "type": "state", "common": { "name": "Tailscale version", "type": "string", "role": "info.version", "read": true, "write": false, "def": "" }, "native": {} },
+    { "_id": "info.version", "type": "state", "common": { "name": "Tailscale version", "type": "string", "role": "text", "read": true, "write": false, "def": "" }, "native": {} },
     { "_id": "info.tailscaleIPs", "type": "state", "common": { "name": "Tailscale IP addresses", "type": "string", "role": "info.ip", "read": true, "write": false, "def": "" }, "native": {} },
     { "_id": "info.dnsName", "type": "state", "common": { "name": "MagicDNS name", "type": "string", "role": "text", "read": true, "write": false, "def": "" }, "native": {} },
     { "_id": "info.tailnet", "type": "state", "common": { "name": "Tailnet", "type": "string", "role": "text", "read": true, "write": false, "def": "" }, "native": {} },

@@ -266,16 +266,16 @@ class TailscaleManager extends utils.Adapter {
       };
       child.stdout.on("data", collect);
       child.stderr.on("data", collect);
-      const timeout = setTimeout(() => {
+      const timeout = this.setTimeout(() => {
         child.kill("SIGTERM");
         reject(new Error("Interactive login timed out after 10 minutes"));
       }, 600000);
       child.on("error", (error) => {
-        clearTimeout(timeout);
+        this.clearTimeout(timeout);
         reject(error);
       });
       child.on("close", (code) => {
-        clearTimeout(timeout);
+        this.clearTimeout(timeout);
         if (code === 0) {
           resolve();
         } else {
