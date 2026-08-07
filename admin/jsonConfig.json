@@ -2,18 +2,140 @@
   "type": "panel",
   "i18n": true,
   "items": {
-    "authHeader": { "type": "header", "text": "Authentication", "size": 2, "xs": 12, "sm": 12, "md": 12, "lg": 12, "xl": 12 },
-    "authHint": { "type": "staticText", "text": "Create a reusable or one-time auth key in the Tailscale admin console. Username and password authentication is not supported by Tailscale CLI.", "newLine": true, "xs": 12, "sm": 12, "md": 12, "lg": 12, "xl": 12 },
-    "authKey": { "type": "password", "label": "Tailscale auth key", "help": "Stored encrypted and never exposed as a state.", "newLine": true, "xs": 12, "sm": 8, "md": 6, "lg": 6, "xl": 6 },
-    "hostname": { "type": "text", "label": "Tailscale hostname (optional)", "newLine": true, "xs": 12, "sm": 8, "md": 6, "lg": 6, "xl": 6 },
-    "networkHeader": { "type": "header", "text": "Network options", "size": 2, "newLine": true, "xs": 12, "sm": 12, "md": 12, "lg": 12, "xl": 12 },
-    "acceptRoutes": { "type": "checkbox", "label": "Accept subnet routes", "xs": 12, "sm": 6, "md": 6, "lg": 6, "xl": 6 },
-    "acceptDns": { "type": "checkbox", "label": "Accept MagicDNS", "xs": 12, "sm": 6, "md": 6, "lg": 6, "xl": 6 },
-    "advertiseRoutes": { "type": "text", "label": "Advertise routes (comma-separated, optional)", "newLine": true, "xs": 12, "sm": 8, "md": 8, "lg": 8, "xl": 8 },
-    "exitNode": { "type": "text", "label": "Exit node IP or name (optional)", "newLine": true, "xs": 12, "sm": 8, "md": 8, "lg": 8, "xl": 8 },
-    "operationHeader": { "type": "header", "text": "Operation", "size": 2, "newLine": true, "xs": 12, "sm": 12, "md": 12, "lg": 12, "xl": 12 },
-    "pollInterval": { "type": "number", "label": "Status polling interval (seconds)", "min": 5, "max": 3600, "xs": 12, "sm": 6, "md": 4, "lg": 4, "xl": 4 },
-    "defaultDurationMinutes": { "type": "number", "label": "Default duration for temporary connection (minutes)", "help": "Used as the initial value of control.durationMinutes.", "min": 1, "max": 10080, "xs": 12, "sm": 6, "md": 4, "lg": 4, "xl": 4 },
-    "autoInstall": { "type": "checkbox", "label": "Attempt installation when adapter starts", "help": "Requires administrator rights on the ioBroker host.", "newLine": true, "xs": 12, "sm": 12, "md": 12, "lg": 12, "xl": 12 }
+    "authHeader": {
+      "type": "header",
+      "text": "Authentication",
+      "size": 2,
+      "xs": 12,
+      "sm": 12,
+      "md": 12,
+      "lg": 12,
+      "xl": 12
+    },
+    "authHint": {
+      "type": "staticText",
+      "text": "Create a reusable or one-time auth key in the Tailscale admin console. Username and password authentication is not supported by Tailscale CLI.",
+      "newLine": true,
+      "xs": 12,
+      "sm": 12,
+      "md": 12,
+      "lg": 12,
+      "xl": 12
+    },
+    "authKey": {
+      "type": "password",
+      "label": "Tailscale auth key",
+      "help": "Stored encrypted and never exposed as a state.",
+      "newLine": true,
+      "xs": 12,
+      "sm": 8,
+      "md": 6,
+      "lg": 6,
+      "xl": 6
+    },
+    "hostname": {
+      "type": "text",
+      "label": "Tailscale hostname (optional)",
+      "newLine": true,
+      "xs": 12,
+      "sm": 8,
+      "md": 6,
+      "lg": 6,
+      "xl": 6
+    },
+    "networkHeader": {
+      "type": "header",
+      "text": "Network options",
+      "size": 2,
+      "newLine": true,
+      "xs": 12,
+      "sm": 12,
+      "md": 12,
+      "lg": 12,
+      "xl": 12
+    },
+    "acceptRoutes": {
+      "type": "checkbox",
+      "label": "Accept subnet routes",
+      "xs": 12,
+      "sm": 6,
+      "md": 6,
+      "lg": 6,
+      "xl": 6
+    },
+    "acceptDns": {
+      "type": "checkbox",
+      "label": "Accept MagicDNS",
+      "xs": 12,
+      "sm": 6,
+      "md": 6,
+      "lg": 6,
+      "xl": 6
+    },
+    "advertiseRoutes": {
+      "type": "text",
+      "label": "Advertise routes (comma-separated, optional)",
+      "newLine": true,
+      "xs": 12,
+      "sm": 8,
+      "md": 8,
+      "lg": 8,
+      "xl": 8
+    },
+    "exitNode": {
+      "type": "text",
+      "label": "Exit node IP or name (optional)",
+      "newLine": true,
+      "xs": 12,
+      "sm": 8,
+      "md": 8,
+      "lg": 8,
+      "xl": 8
+    },
+    "operationHeader": {
+      "type": "header",
+      "text": "Operation",
+      "size": 2,
+      "newLine": true,
+      "xs": 12,
+      "sm": 12,
+      "md": 12,
+      "lg": 12,
+      "xl": 12
+    },
+    "pollInterval": {
+      "type": "number",
+      "label": "Status polling interval (seconds)",
+      "min": 5,
+      "max": 3600,
+      "xs": 12,
+      "sm": 6,
+      "md": 4,
+      "lg": 4,
+      "xl": 4
+    },
+    "defaultDurationMinutes": {
+      "type": "number",
+      "label": "Default duration for temporary connection (minutes)",
+      "help": "Used as the initial value of control.durationMinutes.",
+      "min": 1,
+      "max": 10080,
+      "xs": 12,
+      "sm": 6,
+      "md": 4,
+      "lg": 4,
+      "xl": 4
+    },
+    "autoInstall": {
+      "type": "checkbox",
+      "label": "Attempt installation when adapter starts",
+      "help": "Requires administrator rights on the ioBroker host.",
+      "newLine": true,
+      "xs": 12,
+      "sm": 12,
+      "md": 12,
+      "lg": 12,
+      "xl": 12
+    }
   }
 }

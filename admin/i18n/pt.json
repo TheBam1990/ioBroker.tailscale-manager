@@ -1,1 +1,18 @@
-{"Authentication":"Authentication","Create a reusable or one-time auth key in the Tailscale admin console. Username and password authentication is not supported by Tailscale CLI.":"Create a reusable or one-time auth key in the Tailscale admin console. Username and password authentication is not supported by Tailscale CLI.","Tailscale auth key":"Tailscale auth key","Stored encrypted and never exposed as a state.":"Stored encrypted and never exposed as a state.","Tailscale hostname (optional)":"Tailscale hostname (optional)","Network options":"Network options","Accept subnet routes":"Accept subnet routes","Accept MagicDNS":"Accept MagicDNS","Advertise routes (comma-separated, optional)":"Advertise routes (comma-separated, optional)","Exit node IP or name (optional)":"Exit node IP or name (optional)","Operation":"Operation","Status polling interval (seconds)":"Status polling interval (seconds)","Default duration for temporary connection (minutes)":"Default duration for temporary connection (minutes)","Used as the initial value of control.durationMinutes.":"Used as the initial value of control.durationMinutes.","Attempt installation when adapter starts":"Attempt installation when adapter starts","Requires administrator rights on the ioBroker host.":"Requires administrator rights on the ioBroker host."}
+{
+  "Authentication": "Authentication",
+  "Create a reusable or one-time auth key in the Tailscale admin console. Username and password authentication is not supported by Tailscale CLI.": "Crie uma chave de autenticação reutilizável ou única na consola Tailscale. A CLI não suporta nome de utilizador e palavra-passe.",
+  "Tailscale auth key": "Tailscale auth key",
+  "Stored encrypted and never exposed as a state.": "Guardada de forma encriptada e nunca exposta como estado.",
+  "Tailscale hostname (optional)": "Tailscale hostname (optional)",
+  "Network options": "Network options",
+  "Accept subnet routes": "Accept subnet routes",
+  "Accept MagicDNS": "Accept MagicDNS",
+  "Advertise routes (comma-separated, optional)": "Advertise routes (comma-separated, optional)",
+  "Exit node IP or name (optional)": "IP ou nome do nó de saída (opcional)",
+  "Operation": "Operation",
+  "Status polling interval (seconds)": "Status polling interval (seconds)",
+  "Default duration for temporary connection (minutes)": "Duração predefinida da ligação temporária (minutos)",
+  "Used as the initial value of control.durationMinutes.": "Usada como valor inicial de control.durationMinutes.",
+  "Attempt installation when adapter starts": "Attempt installation when adapter starts",
+  "Requires administrator rights on the ioBroker host.": "Requer direitos de administrador no anfitrião ioBroker."
+}

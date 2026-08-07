@@ -1,1 +1,18 @@
-{"Authentication":"Authentication","Create a reusable or one-time auth key in the Tailscale admin console. Username and password authentication is not supported by Tailscale CLI.":"Create a reusable or one-time auth key in the Tailscale admin console. Username and password authentication is not supported by Tailscale CLI.","Tailscale auth key":"Tailscale auth key","Stored encrypted and never exposed as a state.":"Stored encrypted and never exposed as a state.","Tailscale hostname (optional)":"Tailscale hostname (optional)","Network options":"Network options","Accept subnet routes":"Accept subnet routes","Accept MagicDNS":"Accept MagicDNS","Advertise routes (comma-separated, optional)":"Advertise routes (comma-separated, optional)","Exit node IP or name (optional)":"Exit node IP or name (optional)","Operation":"Operation","Status polling interval (seconds)":"Status polling interval (seconds)","Default duration for temporary connection (minutes)":"Default duration for temporary connection (minutes)","Used as the initial value of control.durationMinutes.":"Used as the initial value of control.durationMinutes.","Attempt installation when adapter starts":"Attempt installation when adapter starts","Requires administrator rights on the ioBroker host.":"Requires administrator rights on the ioBroker host."}
+{
+  "Authentication": "Authentication",
+  "Create a reusable or one-time auth key in the Tailscale admin console. Username and password authentication is not supported by Tailscale CLI.": "请在 Tailscale 管理控制台中创建可重复使用或一次性身份验证密钥。CLI 不支持用户名和密码登录。",
+  "Tailscale auth key": "Tailscale auth key",
+  "Stored encrypted and never exposed as a state.": "加密存储，绝不会作为状态公开。",
+  "Tailscale hostname (optional)": "Tailscale hostname (optional)",
+  "Network options": "Network options",
+  "Accept subnet routes": "Accept subnet routes",
+  "Accept MagicDNS": "Accept MagicDNS",
+  "Advertise routes (comma-separated, optional)": "Advertise routes (comma-separated, optional)",
+  "Exit node IP or name (optional)": "出口节点 IP 或名称（可选）",
+  "Operation": "Operation",
+  "Status polling interval (seconds)": "Status polling interval (seconds)",
+  "Default duration for temporary connection (minutes)": "临时连接的默认持续时间（分钟）",
+  "Used as the initial value of control.durationMinutes.": "用作 control.durationMinutes 的初始值。",
+  "Attempt installation when adapter starts": "Attempt installation when adapter starts",
+  "Requires administrator rights on the ioBroker host.": "需要 ioBroker 主机的管理员权限。"
+}
